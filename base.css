@@ -1,0 +1,51 @@
+:root {
+  --bg: #0b0b0b;
+  --card: #151515;
+  --text: #eaeaea;
+  --muted: #9a9a9a;
+  --gap: 16px;
+  --radius: 16px;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--gap);
+  padding: var(--gap);
+}
+
+.cell {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px;
+  min-height: 120px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Tailles des widgets */
+.cell[data-widget="clock"] {
+  grid-column: span 4;
+}
+
+.cell[data-widget="weather"] {
+  grid-column: span 8;
+}
+
+@media (max-width: 900px) {
+  .cell {
+    grid-column: 1 / -1 !important;
+  }
+}
