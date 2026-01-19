@@ -1,0 +1,26 @@
+.widget-weather .header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.widget-weather .title {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.widget-weather .temp {
+  font-size: 44px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.widget-weather .desc {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.widget-weather .city {
+  color: var(--muted);
+  text-align: right;
+}
