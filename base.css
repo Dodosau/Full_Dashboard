@@ -1,54 +1,21 @@
-/* =========================
-   Base / reset
-   ========================= */
+/* css/base.css */
 
-* {
-  box-sizing: border-box;
-}
+/* Reset */
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
   background: #0f1115;
-  color: #ffffff;
+  color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
 }
 
-/* =========================
-   Layout
-   ========================= */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 16px;
-  padding: 16px;
-}
-
-.cell {
-  min-height: 120px;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .cell {
-    grid-column: 1 / -1 !important;
-  }
-}
-
-/* =========================
-   Cards (widgets)
-   ========================= */
-
+/* UI */
 .card {
   background: #171a21;
   border-radius: 18px;
   padding: 20px;
-  height: 100%;
 }
-
-/* =========================
-   Typography
-   ========================= */
 
 .title {
   font-size: 16px;
@@ -56,39 +23,115 @@ body {
   margin-bottom: 10px;
 }
 
-.small {
-  color: #a7b0c0;
-  margin-top: 8px;
-  font-size: 16px;
-}
-
-/* =========================
-   Buttons / actions
-   ========================= */
+.small { color: #a7b0c0; margin-top: 8px; font-size: 16px; }
 
 .btn {
   display: inline-block;
   text-decoration: none;
   color: #fff;
-  background: rgba(167, 176, 192, 0.15);
+  background: rgba(167,176,192,0.15);
   padding: 10px 14px;
   border-radius: 12px;
   font-weight: 700;
-  transition: background 0.2s ease;
 }
 
-.btn:hover {
-  background: rgba(167, 176, 192, 0.25);
+/* Typo utilitaires */
+.time { font-size: 56px; font-weight: bold; }
+.date { font-size: 20px; color: #a7b0c0; margin-top: 6px; }
+
+/* WEATHER */
+.weatherRow { display: flex; align-items: center; gap: 14px; }
+.icon { font-size: 44px; }
+.temp { font-size: 42px; font-weight: bold; }
+
+/* KPI */
+.kpiRow { display: flex; gap: 16px; margin-top: 10px; flex-wrap: wrap; }
+.kpi { background: rgba(167,176,192,0.08); border-radius: 12px; padding: 10px 12px; min-width: 140px; }
+.kpiLabel { color: #a7b0c0; font-size: 14px; }
+.kpiValue { font-size: 20px; font-weight: 700; }
+
+/* BUS */
+.busRow{ display:flex; align-items:center; gap:14px; }
+
+.busBadge{
+  min-width:120px;
+  height:90px;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  font-size:34px;
+  letter-spacing:-0.5px;
+  color:#fff;
+  background:#3b82f6;
+  box-shadow: 0 10px 20px rgba(0,0,0,.18);
 }
 
-/* =========================
-   Widget sizing (exemples)
-   ========================= */
+.busBadge.good{ background:#16a34a; }
+.busBadge.warn{ background:#f59e0b; }
+.busBadge.bad{  background:#ef4444; }
+.busBadge.na{   background:#64748b; }
 
-.cell[data-widget="clock"] {
-  grid-column: span 4;
+/* CALENDAR TODAY */
+.calendar.today-only {
+  display: flex;
+  flex-direction: column;
 }
 
-.cell[data-widget="weather"] {
-  grid-column: span 8;
+.todayHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.todayDate { font-size: 14px; opacity: 0.75; }
+
+.todayBadge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.badge-green {
+  background: rgba(0, 200, 120, 0.15);
+  border-color: rgba(0, 200, 120, 0.4);
+  color: #9ff0c9;
+}
+
+.badge-orange {
+  background: rgba(255, 170, 0, 0.15);
+  border-color: rgba(255, 170, 0, 0.4);
+  color: #ffd18a;
+}
+
+.badge-red {
+  background: rgba(255, 80, 80, 0.15);
+  border-color: rgba(255, 80, 80, 0.4);
+  color: #ffb3b3;
+}
+
+.todayEvents { display: flex; flex-direction: column; gap: 10px; }
+
+.todayEvent {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.eventTime {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.eventTitle {
+  font-weight: 600;
+  line-height: 1.2;
 }
