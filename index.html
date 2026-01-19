@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Full Dashboard</title>
 
-    <!-- IMPORTANT pour GitHub Pages -->
     <base href="/Full_Dashboard/">
 
     <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
   </head>
+
   <body>
-    <main class="grid">
-      <section class="cell" data-widget="clock"></section>
-      <section class="cell" data-widget="weather"></section>
-    </main>
+    <div class="container">
+      <!-- Colonne gauche (4 widgets empilés) -->
+      <div class="clock"   data-widget="clock"></div>
+      <div class="weather" data-widget="weather"></div>
+      <div class="wedding" data-widget="wedding"></div>
+      <div class="bus"     data-widget="bus"></div>
+
+      <!-- Colonne droite (calendrier full height) -->
+      <div class="calendar" data-widget="calendar"></div>
+    </div>
 
     <script src="js/main.js" defer></script>
   </body>
