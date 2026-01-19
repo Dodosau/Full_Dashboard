@@ -1,0 +1,15 @@
+.widget-clock .title {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.widget-clock .time {
+  font-size: 48px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.widget-clock .date {
+  margin-top: 6px;
+  color: var(--muted);
+}
